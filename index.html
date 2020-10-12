@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+<img onclick="changesrcImg(1)" id="img1" src="images/anh1.jpg" alt="1">
+<img onclick="changesrcImg(2)" id="img2" src="images/anh2.jpg" alt="2">
+<img onclick="changesrcImg(3)" id="img3" src="images/anh3.jpg" alt="3">
+<img onclick="changesrcImg(4)" id="img4" src="images/anh4.jpg" alt="4">
+<img onclick="changesrcImg(5)" id="img5" src="images/anh5.jpg" alt="5">
+<script>
+    function changesrcImg(id){
+        let img = document.getElementById('img'+id);
+        let cuont = +img.alt;
+        //if(cuont<5){
+        //    cuont++;
+        // }else {
+        //   cuont = 1;
+        // }
+        cuont < 5?cuont++:cuont=1;
+        //if (img.src.match("images/anh1.jpg")){
+        //   img.src = 'images/anh2.jpg';
+        // }else {
+        //   img.src = 'images/anh1.jpg';
+        // }
+        img.src = 'images/anh'+cuont+'.jpg';
+        img.alt = cuont;
+        //setTimeout(checkWin,100);
+        checkWin();
+    }
+
+    function checkWin() {
+        let img1 = document.getElementById('img1');
+        let img2 = document.getElementById('img2');
+        let img3 = document.getElementById('img3');
+        let img4 = document.getElementById('img4');
+        let img5 = document.getElementById('img5');
+        if (img1.alt === img2.alt & img2.alt === img3.alt && img3.alt === img4.alt && img4.alt === img5.alt);{
+        }
+    }
+</script>
+</body>
+</html>
